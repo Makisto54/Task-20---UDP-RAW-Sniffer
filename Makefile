@@ -7,6 +7,10 @@ TASK_2 := UDP/
 
 all: $(TASK_1) $(TASK_2)
 
+debug:
+	$(CC) -g $(TASK_1).c -o $(TASK_1)
+	cd $(TASK_2) && make debug
+
 $(TASK_1): $(TASK_1).c
 	$(CC) $(TASK_1).c -o $(TASK_1)
 
